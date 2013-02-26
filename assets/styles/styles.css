@@ -1,0 +1,1132 @@
+/* normalize.css v2.0.1 | MIT License | git.io/normalize */
+/* ==========================================================================
+   HTML5 display definitions
+   ========================================================================== */
+/*
+ * Corrects `block` display not defined in IE 8/9.
+ */
+/* line 21, partials/_normalize.scss */
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+nav,
+section,
+summary {
+  display: block;
+}
+
+/*
+ * Corrects `inline-block` display not defined in IE 8/9.
+ */
+/* line 31, partials/_normalize.scss */
+audio,
+canvas,
+video {
+  display: inline-block;
+}
+
+/*
+ * Prevents modern browsers from displaying `audio` without controls.
+ * Remove excess height in iOS 5 devices.
+ */
+/* line 40, partials/_normalize.scss */
+audio:not([controls]) {
+  display: none;
+  height: 0;
+}
+
+/*
+ * Addresses styling for `hidden` attribute not present in IE 8/9.
+ */
+/* line 49, partials/_normalize.scss */
+[hidden] {
+  display: none;
+}
+
+/* ==========================================================================
+   Base
+   ========================================================================== */
+/*
+ * 1. Sets default font family to sans-serif.
+ * 2. Prevents iOS text size adjust after orientation change, without disabling
+ *    user zoom.
+ */
+/* line 63, partials/_normalize.scss */
+html {
+  font-family: sans-serif;
+  /* 1 */
+  -webkit-text-size-adjust: 100%;
+  /* 2 */
+  -ms-text-size-adjust: 100%;
+  /* 2 */
+}
+
+/*
+ * Removes default margin.
+ */
+/* line 73, partials/_normalize.scss */
+body {
+  margin: 0;
+}
+
+/* ==========================================================================
+   Links
+   ========================================================================== */
+/*
+ * Addresses `outline` inconsistency between Chrome and other browsers.
+ */
+/* line 85, partials/_normalize.scss */
+a:focus {
+  outline: thin dotted;
+}
+
+/*
+ * Improves readability when focused and also mouse hovered in all browsers.
+ */
+/* line 94, partials/_normalize.scss */
+a:active,
+a:hover {
+  outline: 0;
+}
+
+/* ==========================================================================
+   Typography
+   ========================================================================== */
+/*
+ * Addresses `h1` font sizes within `section` and `article` in Firefox 4+,
+ * Safari 5, and Chrome.
+ */
+/* line 107, partials/_normalize.scss */
+h1 {
+  font-size: 2em;
+}
+
+/*
+ * Addresses styling not present in IE 8/9, Safari 5, and Chrome.
+ */
+/* line 115, partials/_normalize.scss */
+abbr[title] {
+  border-bottom: 1px dotted;
+}
+
+/*
+ * Addresses style set to `bolder` in Firefox 4+, Safari 5, and Chrome.
+ */
+/* line 124, partials/_normalize.scss */
+b,
+strong {
+  font-weight: bold;
+}
+
+/*
+ * Addresses styling not present in Safari 5 and Chrome.
+ */
+/* line 132, partials/_normalize.scss */
+dfn {
+  font-style: italic;
+}
+
+/*
+ * Addresses styling not present in IE 8/9.
+ */
+/* line 140, partials/_normalize.scss */
+mark {
+  background: #ff0;
+  color: #000;
+}
+
+/*
+ * Corrects font family set oddly in Safari 5 and Chrome.
+ */
+/* line 153, partials/_normalize.scss */
+code,
+kbd,
+pre,
+samp {
+  font-family: monospace, serif;
+  font-size: 1em;
+}
+
+/*
+ * Improves readability of pre-formatted text in all browsers.
+ */
+/* line 162, partials/_normalize.scss */
+pre {
+  white-space: pre;
+  white-space: pre-wrap;
+  word-wrap: break-word;
+}
+
+/*
+ * Sets consistent quote types.
+ */
+/* line 172, partials/_normalize.scss */
+q {
+  quotes: "\201C" "\201D" "\2018" "\2019";
+}
+
+/*
+ * Addresses inconsistent and variable font size in all browsers.
+ */
+/* line 180, partials/_normalize.scss */
+small {
+  font-size: 80%;
+}
+
+/*
+ * Prevents `sub` and `sup` affecting `line-height` in all browsers.
+ */
+/* line 189, partials/_normalize.scss */
+sub,
+sup {
+  font-size: 75%;
+  line-height: 0;
+  position: relative;
+  vertical-align: baseline;
+}
+
+/* line 196, partials/_normalize.scss */
+sup {
+  top: -0.5em;
+}
+
+/* line 200, partials/_normalize.scss */
+sub {
+  bottom: -0.25em;
+}
+
+/* ==========================================================================
+   Embedded content
+   ========================================================================== */
+/*
+ * Removes border when inside `a` element in IE 8/9.
+ */
+/* line 212, partials/_normalize.scss */
+img {
+  border: 0;
+}
+
+/*
+ * Corrects overflow displayed oddly in IE 9.
+ */
+/* line 220, partials/_normalize.scss */
+svg:not(:root) {
+  overflow: hidden;
+}
+
+/* ==========================================================================
+   Figures
+   ========================================================================== */
+/*
+ * Addresses margin not present in IE 8/9 and Safari 5.
+ */
+/* line 232, partials/_normalize.scss */
+figure {
+  margin: 0;
+}
+
+/* ==========================================================================
+   Forms
+   ========================================================================== */
+/*
+ * Define consistent border, margin, and padding.
+ */
+/* line 244, partials/_normalize.scss */
+fieldset {
+  border: 1px solid #c0c0c0;
+  margin: 0 2px;
+  padding: 0.35em 0.625em 0.75em;
+}
+
+/*
+ * 1. Corrects color not being inherited in IE 8/9.
+ * 2. Remove padding so people aren't caught out if they zero out fieldsets.
+ */
+/* line 255, partials/_normalize.scss */
+legend {
+  border: 0;
+  /* 1 */
+  padding: 0;
+  /* 2 */
+}
+
+/*
+ * 1. Corrects font family not being inherited in all browsers.
+ * 2. Corrects font size not being inherited in all browsers.
+ * 3. Addresses margins set differently in Firefox 4+, Safari 5, and Chrome
+ */
+/* line 269, partials/_normalize.scss */
+button,
+input,
+select,
+textarea {
+  font-family: inherit;
+  /* 1 */
+  font-size: 100%;
+  /* 2 */
+  margin: 0;
+  /* 3 */
+}
+
+/*
+ * Addresses Firefox 4+ setting `line-height` on `input` using `!important` in
+ * the UA stylesheet.
+ */
+/* line 281, partials/_normalize.scss */
+button,
+input {
+  line-height: normal;
+}
+
+/*
+ * 1. Avoid the WebKit bug in Android 4.0.* where (2) destroys native `audio`
+ *    and `video` controls.
+ * 2. Corrects inability to style clickable `input` types in iOS.
+ * 3. Improves usability and consistency of cursor style between image-type
+ *    `input` and others.
+ */
+/* line 296, partials/_normalize.scss */
+button,
+html input[type="button"],
+input[type="reset"],
+input[type="submit"] {
+  -webkit-appearance: button;
+  /* 2 */
+  cursor: pointer;
+  /* 3 */
+}
+
+/*
+ * Re-set default cursor for disabled elements.
+ */
+/* line 306, partials/_normalize.scss */
+button[disabled],
+input[disabled] {
+  cursor: default;
+}
+
+/*
+ * 1. Addresses box sizing set to `content-box` in IE 8/9.
+ * 2. Removes excess padding in IE 8/9.
+ */
+/* line 316, partials/_normalize.scss */
+input[type="checkbox"],
+input[type="radio"] {
+  box-sizing: border-box;
+  /* 1 */
+  padding: 0;
+  /* 2 */
+}
+
+/*
+ * 1. Addresses `appearance` set to `searchfield` in Safari 5 and Chrome.
+ * 2. Addresses `box-sizing` set to `border-box` in Safari 5 and Chrome
+ *    (include `-moz` to future-proof).
+ */
+/* line 327, partials/_normalize.scss */
+input[type="search"] {
+  -webkit-appearance: textfield;
+  /* 1 */
+  -moz-box-sizing: content-box;
+  -webkit-box-sizing: content-box;
+  /* 2 */
+  box-sizing: content-box;
+}
+
+/*
+ * Removes inner padding and search cancel button in Safari 5 and Chrome
+ * on OS X.
+ */
+/* line 340, partials/_normalize.scss */
+input[type="search"]::-webkit-search-cancel-button,
+input[type="search"]::-webkit-search-decoration {
+  -webkit-appearance: none;
+}
+
+/*
+ * Removes inner padding and border in Firefox 4+.
+ */
+/* line 349, partials/_normalize.scss */
+button::-moz-focus-inner,
+input::-moz-focus-inner {
+  border: 0;
+  padding: 0;
+}
+
+/*
+ * 1. Removes default vertical scrollbar in IE 8/9.
+ * 2. Improves readability and alignment in all browsers.
+ */
+/* line 359, partials/_normalize.scss */
+textarea {
+  overflow: auto;
+  /* 1 */
+  vertical-align: top;
+  /* 2 */
+}
+
+/* ==========================================================================
+   Tables
+   ========================================================================== */
+/*
+ * Remove most spacing between table cells.
+ */
+/* line 372, partials/_normalize.scss */
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+@font-face {
+  font-family: 'scriptures';
+  src: url("../fonts/scriptures.eot");
+  src: url("../fonts/scriptures.eot?#iefix") format("embedded-opentype"), url("../fonts/scriptures.svg#scriptures") format("svg"), url("../fonts/scriptures.woff") format("woff"), url("../fonts/scriptures.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+
+/* Use the following CSS code if you want to use data attributes for inserting your icons */
+/* line 13, partials/_fonts.scss */
+[data-icon]:before {
+  font-family: 'scriptures';
+  content: attr(data-icon);
+  speak: none;
+  font-weight: normal;
+  line-height: 1;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Use the following CSS code if you want to have a class per icon */
+/* line 23, partials/_fonts.scss */
+[class^="icon-"]:before, [class*=" icon-"]:before {
+  font-family: 'scriptures';
+  font-style: normal;
+  speak: none;
+  font-weight: normal;
+  line-height: 1;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* line 31, partials/_fonts.scss */
+.icon-fleuron:before {
+  content: "\6e";
+}
+
+/* line 34, partials/_fonts.scss */
+.icon-church-logo:before {
+  content: "\21";
+}
+
+/*
+ * HTML5 Boilerplate
+ * v4.0.1
+ *
+ * What follows is the result of much research on cross-browser styling.
+ * Credit left inline and big thanks to Nicolas Gallagher, Jonathan Neal,
+ * Kroc Camen, and the H5BP dev community and team.
+ */
+/* ==========================================================================
+   Base styles: opinionated defaults
+   ========================================================================== */
+/* line 18, partials/_h5bp.scss */
+html,
+button,
+input,
+select,
+textarea {
+  color: #333333;
+}
+
+/* line 22, partials/_h5bp.scss */
+body {
+  font-size: 1.4em;
+  line-height: 1.4;
+}
+
+/*
+ * Remove text-shadow in selection highlight: h5bp.com/i
+ * These selection declarations have to be separate.
+ * Customize the background color to match your design.
+ */
+/* line 33, partials/_h5bp.scss */
+::-moz-selection {
+  background: #b3d4fc;
+  text-shadow: none;
+}
+
+/* line 38, partials/_h5bp.scss */
+::selection {
+  background: #b3d4fc;
+  text-shadow: none;
+}
+
+/*
+ * A better looking default horizontal rule
+ */
+/* line 47, partials/_h5bp.scss */
+hr {
+  display: block;
+  height: 1px;
+  border: 0;
+  border-top: 1px solid #eeeeee;
+  margin: 1em 0;
+  padding: 0;
+}
+
+/*
+ * Remove the gap between images and the bottom of their containers: h5bp.com/i/440
+ */
+/* line 60, partials/_h5bp.scss */
+img {
+  vertical-align: middle;
+}
+
+/*
+ * Remove default fieldset styles.
+ */
+/* line 68, partials/_h5bp.scss */
+fieldset {
+  border: 0;
+  margin: 0;
+  padding: 0;
+}
+
+/*
+ * Allow only vertical resizing of textareas.
+ */
+/* line 78, partials/_h5bp.scss */
+textarea {
+  resize: vertical;
+}
+
+/* ==========================================================================
+   Chrome Frame prompt
+   ========================================================================== */
+/* line 86, partials/_h5bp.scss */
+.chromeframe {
+  margin: 0.2em 0;
+  background: #eeeeee;
+  color: black;
+  padding: 0.2em 0;
+}
+
+/* ==========================================================================
+   Author's custom styles
+   ========================================================================== */
+/* line 1, partials/_custom.scss */
+body {
+  font-family: Palatino, "Palatino Linotype", "Adobe Caslon Pro", Baskerville, Georgia, "Times New Roman", Times, serif;
+  max-width: 760px;
+  margin: 0 auto;
+  padding: 2%;
+  word-wrap: break-word;
+  -webkit-hyphens: auto;
+  -moz-hyphens: auto;
+  -ms-hyphens: auto;
+  -o-hyphens: auto;
+  hyphens: auto;
+}
+
+/* line 10, partials/_custom.scss */
+.chapter a, .verses a, .metadata a {
+  text-decoration: none;
+  margin-bottom: .1em;
+  color: #333333;
+  border-bottom: 1px solid #eeeeee;
+}
+/* line 15, partials/_custom.scss */
+.chapter a:hover, .verses a:hover, .metadata a:hover {
+  background: #eeeeee;
+}
+
+/* line 21, partials/_custom.scss */
+.chapter {
+  margin-top: 2em;
+}
+/* line 23, partials/_custom.scss */
+.chapter h1, .chapter h2 {
+  text-align: center;
+  font-size: 1em;
+  padding: 0 auto;
+  margin: 0 auto;
+}
+/* line 29, partials/_custom.scss */
+.chapter h1 {
+  padding: 1em auto;
+}
+/* line 32, partials/_custom.scss */
+.chapter::before {
+  display: block;
+  font-size: 7em;
+  text-align: center;
+  font-family: 'scriptures';
+  font-style: normal;
+  speak: none;
+  font-weight: normal;
+  line-height: 1;
+  -webkit-font-smoothing: antialiased;
+  content: "\6e";
+}
+
+/* line 46, partials/_custom.scss */
+.verses {
+  /* $columnWidth, $columnCount, $columnRuleWidth, $columnRuleStyle, $columnRuleColor, $columnGap */
+  -webkit-columns: 12em 2;
+  -moz-columns: 12em 2;
+  columns: 12em 2;
+  -webkit-column-rule: 1px outset #eeeeee;
+  -moz-column-rule: 1px outset #eeeeee;
+  column-rule: 1px outset #eeeeee;
+  -webkit-column-gap: 1.5em;
+  -moz-column-gap: 1.5em;
+  column-gap: 1.5em;
+  /* Do not show verse number for first verse */
+  /* Drop cap for first letter of first verse */
+}
+/* line 50, partials/_custom.scss */
+.verses p:first-child span:nth-of-type(1) {
+  display: none;
+}
+/* line 54, partials/_custom.scss */
+.verses p:first-child:first-letter {
+  font-size: 7em;
+  float: left;
+  margin: .1em .1em 0 0;
+  line-height: 0.8;
+}
+/* line 60, partials/_custom.scss */
+.verses .shortest {
+  background: #eee;
+}
+
+/* line 65, partials/_custom.scss */
+.nextColumn {
+  font-size: 1.05em;
+}
+
+/* line 69, partials/_custom.scss */
+.studyIntro, .studySummary, .intro {
+  font-style: italic;
+  padding-bottom: 1em;
+  font-size: 1.2em;
+}
+
+/* line 75, partials/_custom.scss */
+.studyIntro, .intro {
+  padding: 1em 0;
+}
+
+/* line 80, partials/_custom.scss */
+.verses p {
+  padding: 0;
+  margin: 0;
+}
+/* line 84, partials/_custom.scss */
+.verses .verseNumber {
+  color: #999999;
+  font-size: .75em;
+}
+/* line 89, partials/_custom.scss */
+.verses sup a {
+  font-size: .8em;
+  padding: .5em .1em .5em 0;
+  color: #999999;
+  border: none;
+}
+/* line 94, partials/_custom.scss */
+.verses sup a:hover {
+  color: #333333;
+}
+
+/* line 102, partials/_custom.scss */
+.caps {
+  font-style: normal;
+  font-size: .8em;
+}
+
+@media (min-width: 768px) and (max-width: 979px) {
+  /* line 109, partials/_custom.scss */
+  body {
+    font-size: 1.2em;
+    padding: 4%;
+  }
+}
+@media (max-width: 767px) {
+  /* line 117, partials/_custom.scss */
+  body {
+    font-size: 1em;
+    padding: 5%;
+  }
+
+  /* line 121, partials/_custom.scss */
+  .studyIntro, .studySummary, .intro {
+    font-size: 1em;
+  }
+
+  /* line 124, partials/_custom.scss */
+  .verses {
+    -webkit-column-count: 1;
+    -moz-column-count: 1;
+    column-count: 1;
+  }
+
+  /* line 128, partials/_custom.scss */
+  .nextColumn {
+    display: none;
+  }
+}
+/*.volume {
+	h2 {
+		font-size: 1em;
+		float: left;
+		width: 5em;
+		margin: 1em 1em 1em 0;
+	}
+	h3 {
+		margin: 0 1em 1em 0;
+	}
+	.start_date, .end_date {
+		margin: 1em 0 1em 0;
+	}
+	.time-based, .length-based {
+		float: left;
+		margin: 1em;
+	}
+}*/
+/* line 153, partials/_custom.scss */
+h2 {
+  font-size: 1em;
+}
+
+/* http://www.responsivegridsystem.com/ */
+/*  SECTIONS  */
+/* line 160, partials/_custom.scss */
+.section {
+  clear: both;
+  padding: 0px;
+  margin: 0px;
+}
+
+/*  COLUMN SETUP  */
+/* line 167, partials/_custom.scss */
+.col {
+  display: block;
+  float: left;
+  margin: 1% 0 1% 1.6%;
+}
+
+/* line 172, partials/_custom.scss */
+.col:first-child {
+  margin-left: 0;
+}
+
+/* line 174, partials/_custom.scss */
+.volume {
+  width: 15%;
+}
+
+/* line 178, partials/_custom.scss */
+.schedule {
+  width: 40%;
+}
+
+/* line 182, partials/_custom.scss */
+.calendar {
+  width: 185px;
+}
+
+/*  GO FULL WIDTH AT LESS THAN 480 PIXELS */
+@media only screen and (max-width: 480px) {
+  /* line 189, partials/_custom.scss */
+  .schedule, .volume {
+    width: 100%;
+  }
+}
+/* ==========================================================================
+   Helper classes
+   ========================================================================== */
+/*
+ * Image replacement
+ */
+/* line 107, partials/_h5bp.scss */
+.ir {
+  background-color: transparent;
+  border: 0;
+  overflow: hidden;
+  /* IE 6/7 fallback */
+  *text-indent: -9999px;
+}
+
+/* line 115, partials/_h5bp.scss */
+.ir:before {
+  content: "";
+  display: block;
+  width: 0;
+  height: 100%;
+}
+
+/*
+ * Hide from both screenreaders and browsers: h5bp.com/u
+ */
+/* line 126, partials/_h5bp.scss */
+.hidden {
+  display: none !important;
+  visibility: hidden;
+}
+
+/*
+ * Hide only visually, but have it available for screenreaders: h5bp.com/v
+ */
+/* line 135, partials/_h5bp.scss */
+.visuallyhidden {
+  border: 0;
+  clip: rect(0 0 0 0);
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  padding: 0;
+  position: absolute;
+  width: 1px;
+}
+
+/*
+ * Extends the .visuallyhidden class to allow the element to be focusable
+ * when navigated to via the keyboard: h5bp.com/p
+ */
+/* line 152, partials/_h5bp.scss */
+.visuallyhidden.focusable:active,
+.visuallyhidden.focusable:focus {
+  clip: auto;
+  height: auto;
+  margin: 0;
+  overflow: visible;
+  position: static;
+  width: auto;
+}
+
+/*
+ * Hide visually and from screenreaders, but maintain layout
+ */
+/* line 165, partials/_h5bp.scss */
+.invisible {
+  visibility: hidden;
+}
+
+/*
+ * Clearfix: contain floats
+ *
+ * For modern browsers
+ * 1. The space content is one way to avoid an Opera bug when the
+ *    `contenteditable` attribute is included anywhere else in the document.
+ *    Otherwise it causes space to appear at the top and bottom of elements
+ *    that receive the `clearfix` class.
+ * 2. The use of `table` rather than `block` is only necessary if using
+ *    `:before` to contain the top-margins of child elements.
+ */
+/* line 182, partials/_h5bp.scss */
+.clearfix:before,
+.clearfix:after {
+  content: " ";
+  /* 1 */
+  display: table;
+  /* 2 */
+}
+
+/* line 187, partials/_h5bp.scss */
+.clearfix:after {
+  clear: both;
+}
+
+/*
+ * For IE 6/7 only
+ * Include this rule to trigger hasLayout and contain floats.
+ */
+/* line 196, partials/_h5bp.scss */
+.clearfix {
+  *zoom: 1;
+}
+
+/* ==========================================================================
+   EXAMPLE Media Queries for Responsive Design.
+   Theses examples override the primary ('mobile first') styles.
+   Modify as content requires.
+   ========================================================================== */
+@media only screen and (min-width: 35em) {
+  /* Style adjustments for viewports that meet the condition */
+}
+@media only screen and (-webkit-min-device-pixel-ratio: 1.5), only screen and (min-resolution: 144dpi) {
+  /* Style adjustments for high resolution devices */
+}
+/* ==========================================================================
+   Print styles.
+   Inlined to avoid required HTTP connection: h5bp.com/r
+   ========================================================================== */
+@media print {
+  /* line 1, partials/_print.scss */
+  * {
+    background: transparent !important;
+    color: black !important;
+    /* Black prints faster: h5bp.com/s */
+    box-shadow: none !important;
+    text-shadow: none !important;
+  }
+
+  /* line 9, partials/_print.scss */
+  a,
+  a:visited {
+    text-decoration: none;
+  }
+
+  /* line 14, partials/_print.scss */
+  pre,
+  blockquote {
+    border: 1px solid #999999;
+    page-break-inside: avoid;
+  }
+
+  /* line 19, partials/_print.scss */
+  thead {
+    display: table-header-group;
+    /* h5bp.com/t */
+  }
+
+  /* line 24, partials/_print.scss */
+  tr,
+  img {
+    page-break-inside: avoid;
+  }
+
+  /* line 28, partials/_print.scss */
+  img {
+    max-width: 100% !important;
+  }
+
+  @page {
+    margin: 0.5cm;
+}
+
+  /* line 38, partials/_print.scss */
+  p,
+  h2,
+  h3 {
+    orphans: 3;
+    widows: 3;
+  }
+
+  /* line 44, partials/_print.scss */
+  h2,
+  h3 {
+    page-break-after: avoid;
+  }
+}
+/* http://www.hongkiat.com/blog/jquery-ui-datepicker/ */
+/* DatePicker Container */
+/* line 3, partials/_jquery_ui.scss */
+.ui-datepicker {
+  width: 181px;
+  height: auto;
+  margin: 5px auto 0;
+  font-size: .6em;
+  -webkit-box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.5);
+  -moz-box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.5);
+  box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.5);
+}
+
+/* line 12, partials/_jquery_ui.scss */
+.ui-datepicker a {
+  text-decoration: none;
+}
+
+/* DatePicker Table */
+/* line 16, partials/_jquery_ui.scss */
+.ui-datepicker table {
+  width: 100%;
+}
+
+/* line 19, partials/_jquery_ui.scss */
+.ui-datepicker-header {
+  background: url("../images/dark_leather.png") repeat 0 0 black;
+  color: #e0e0e0;
+  font-weight: bold;
+  -webkit-box-shadow: inset 0px 1px 1px 0px rgba(250, 250, 250, 0.2);
+  -moz-box-shadow: inset 0px 1px 1px 0px rgba(250, 250, 250, 0.2);
+  box-shadow: inset 0px 1px 1px 0px rgba(250, 250, 250, 0.2);
+  text-shadow: 1px -1px 0px black;
+  filter: dropshadow(color=black, offx=1, offy=-1);
+  line-height: 25px;
+  border-width: 1px 0 0 0;
+  border-style: solid;
+  border-color: #111;
+  position: relative;
+}
+/* line 33, partials/_jquery_ui.scss */
+.ui-datepicker-header:before {
+  float: right;
+  position: absolute;
+  top: 0;
+  right: 5px;
+  color: white;
+  content: "▶";
+}
+/* line 41, partials/_jquery_ui.scss */
+.ui-datepicker-header:after {
+  float: left;
+  position: absolute;
+  top: 0;
+  left: 5px;
+  color: white;
+  content: "◀";
+}
+
+/* line 50, partials/_jquery_ui.scss */
+.ui-datepicker-title {
+  text-align: center;
+}
+
+/* line 53, partials/_jquery_ui.scss */
+.ui-datepicker-prev, .ui-datepicker-next {
+  display: inline-block;
+  width: 25px;
+  height: 30px;
+  text-align: center;
+  cursor: pointer;
+  background-repeat: no-repeat;
+  line-height: 600%;
+  overflow: hidden;
+}
+/* line 62, partials/_jquery_ui.scss */
+.ui-datepicker-prev span, .ui-datepicker-next span {
+  display: none;
+}
+
+/* line 66, partials/_jquery_ui.scss */
+.ui-datepicker-prev {
+  float: left;
+  background-position: center -30px;
+}
+
+/* line 70, partials/_jquery_ui.scss */
+.ui-datepicker-next {
+  float: right;
+  background-position: center 0px;
+}
+
+/* line 74, partials/_jquery_ui.scss */
+.ui-datepicker thead {
+  background-color: #f7f7f7;
+  background-image: -moz-linear-gradient(top, #f7f7f7 0%, #f1f1f1 100%);
+  background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #f7f7f7), color-stop(100%, #f1f1f1));
+  background-image: -webkit-linear-gradient(top, #f7f7f7 0%, #f1f1f1 100%);
+  background-image: -o-linear-gradient(top, #f7f7f7 0%, #f1f1f1 100%);
+  background-image: -ms-linear-gradient(top, #f7f7f7 0%, #f1f1f1 100%);
+  background-image: linear-gradient(top, #f7f7f7 0%, #f1f1f1 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#f7f7f7', endColorstr='#f1f1f1',GradientType=0 );
+  border-bottom: 1px solid #bbb;
+}
+
+/* line 85, partials/_jquery_ui.scss */
+.ui-datepicker th {
+  text-transform: uppercase;
+  font-size: 6pt;
+  padding: 5px 0;
+  color: #666666;
+  text-shadow: 1px 0px 0px #fff;
+  filter: dropshadow(color=white, offx=1, offy=0);
+}
+
+/* line 93, partials/_jquery_ui.scss */
+.ui-datepicker tbody td {
+  padding: 0;
+  border-right: 1px solid #bbb;
+}
+
+/* line 97, partials/_jquery_ui.scss */
+.ui-datepicker tbody td:last-child {
+  border-right: 0px;
+}
+
+/* line 100, partials/_jquery_ui.scss */
+.ui-datepicker tbody tr {
+  border-bottom: 1px solid #bbb;
+}
+
+/* line 103, partials/_jquery_ui.scss */
+.ui-datepicker tbody tr:last-child {
+  border-bottom: 0px;
+}
+
+/* line 106, partials/_jquery_ui.scss */
+.ui-datepicker td span, .ui-datepicker td a {
+  display: inline-block;
+  font-weight: bold;
+  text-align: center;
+  width: 25px;
+  height: 25px;
+  line-height: 25px;
+  color: #666666;
+  text-shadow: 1px 1px 0px #fff;
+  filter: dropshadow(color=white, offx=1, offy=1);
+}
+
+/* line 117, partials/_jquery_ui.scss */
+.ui-datepicker-calendar .ui-state-default {
+  background: #ededed;
+  background: -moz-linear-gradient(top, #ededed 0%, #dedede 100%);
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #ededed), color-stop(100%, #dedede));
+  background: -webkit-linear-gradient(top, #ededed 0%, #dedede 100%);
+  background: -o-linear-gradient(top, #ededed 0%, #dedede 100%);
+  background: -ms-linear-gradient(top, #ededed 0%, #dedede 100%);
+  background: linear-gradient(top, #ededed 0%, #dedede 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ededed', endColorstr='#dedede',GradientType=0 );
+  -webkit-box-shadow: inset 1px 1px 0px 0px rgba(250, 250, 250, 0.5);
+  -moz-box-shadow: inset 1px 1px 0px 0px rgba(250, 250, 250, 0.5);
+  box-shadow: inset 1px 1px 0px 0px rgba(250, 250, 250, 0.5);
+}
+
+/* line 130, partials/_jquery_ui.scss */
+.ui-datepicker-calendar .ui-state-hover {
+  background: #f7f7f7;
+}
+
+/* line 133, partials/_jquery_ui.scss */
+.ui-datepicker-calendar .ui-state-active {
+  background: #666;
+  -webkit-box-shadow: inset 0px 0px 10px 0px rgba(0, 0, 0, 0.1);
+  -moz-box-shadow: inset 0px 0px 10px 0px rgba(0, 0, 0, 0.1);
+  box-shadow: inset 0px 0px 10px 0px rgba(0, 0, 0, 0.1);
+  color: #fff;
+  text-shadow: none;
+  filter: dropshadow(color=#666666, offx=0, offy=1);
+  border: 1px solid #e0e0e0;
+  position: relative;
+  margin: -1px;
+}
+
+/* line 145, partials/_jquery_ui.scss */
+.ui-datepicker-unselectable .ui-state-default {
+  background: #f4f4f4;
+  color: #b4b3b3;
+}
+
+/* line 149, partials/_jquery_ui.scss */
+.ui-datepicker-calendar td:first-child .ui-state-active {
+  width: 24px;
+  margin-left: 0;
+}
+
+/* line 153, partials/_jquery_ui.scss */
+.ui-datepicker-calendar td:last-child .ui-state-active {
+  width: 24px;
+  margin-right: 0;
+}
+
+/* line 157, partials/_jquery_ui.scss */
+.ui-datepicker-calendar tr:last-child .ui-state-active {
+  height: 24px;
+  margin-bottom: 0;
+}

@@ -1,0 +1,22 @@
+{% set app_url = constant('config::URL') %}
+<nav id='site_nav'>
+	<div class='container'>
+		<ul>
+		  {% if title == 'Home' %}
+  			<li class="active"><a href="{{ app_url }}/">Active</a></li>
+  		{% else %}
+  		  <li><a href="{{ app_url }}/">Active</a></li>
+  		{% endif %}
+  		{% if title == 'All' %}
+  			<li class="active"><a href="{{ app_url }}/all.php">All</a></li>
+  		{% else %}
+  		  <li><a href="{{ app_url }}/all.php">All</a></li>
+  		{% endif %}
+			{% if title == 'Add' %}
+        <li class="active"><a href="{{ app_url }}/add.php">Add a Resource</a></li>
+      {% else %}
+        <li><a href="{{ app_url }}/add.php">Add a Resource</a></li>
+      {% endif %}
+		</ul>
+	</div>
+</nav>

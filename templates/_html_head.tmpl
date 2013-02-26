@@ -1,0 +1,95 @@
+{% spaceless %}
+{% autoescape false %}
+
+<!doctype html>
+<html lang="en">
+<head>
+	<meta http-equiv="Content-type" content="text/html; charset=utf-8"/>
+	<meta http-equiv='X-UA-Compatible' content='IE=10; IE=9; IE=8'/>
+	<meta name='viewport' content='width=device-width, initial-scale=1.0, user-scalable=yes'/>
+
+	<title>{{ title }}</title>
+
+	<link rel='stylesheet' href='//media.lib.byu.edu/assets/css/loader/fonts-1.0,reset-1.0,grid-1.0,hbll-2.9,lists-1.2,forms-1.1,buttons-1.3' type='text/css'/>
+  <!--[if lt IE 9]>
+    <script src='//media.lib.byu.edu/assets/js/html5shiv/html5shiv-1.0.js'></script>
+  <![endif]-->
+  <!-- Tablesorter data -->
+	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7/jquery.min.js"></script>
+	<script src='lib/js/tablesorter/js/jquery.tablesorter.min.js'></script>
+	<link rel="stylesheet" href="lib/js/tablesorter/css/theme.blue.css">
+  <script type="text/javascript" charset="utf-8">
+    $(document).ready(function() {
+      $("table").tablesorter( {headers: {0:{sorter:false}}, theme : 'blue', widgets : [ 'zebra' ], sortList: [[4,0]]} );
+    }
+  );
+  </script>
+
+  <style type="text/css">
+    body {
+      line-height: 1.4em;
+    }
+    h1 {
+      font-weight: bold;
+      font-size: 2em;
+      color: #830;
+      margin: 1em 0 0 0;
+    }
+    h2, h3 {
+      font-weight: bold;
+      font-size: 1.5em;
+      color: #999;
+      margin: 1em 0 0 0;
+    }
+    h3 {
+      font-size: 1em;
+    }
+    h4 {
+      font-weight:bold;
+      margin: 2em 0 0.5em 0;
+      color: #535353;
+    }
+    form {
+      line-height: .7em;
+    }
+    label {
+      margin: 1.25em 0 0 0;
+      padding: 1.25em 0 0 0;
+    }
+    form #url {
+      min-width: 40em;
+    }
+    form #notes {
+      max-width: 40em;
+    }
+    ul {
+      font-size: 0.75em;
+      font-weight: normal;
+      color: #999;
+      padding: 0.5em 0;
+    }
+    ul li {
+      padding-left: 0.25em;
+    }
+    .w7 {
+      min-width: 7em;
+    }
+    .w15 {
+      min-width: 15em;
+    }
+  </style>
+</head>
+<body>
+    <header id='site_header' class='frame compact'>
+    	<div class='container'>
+    	    <h1><a id='site_header_link_byu' href='http://www.byu.edu'>BYU</a> <a id='site_header_link_hbll' href='http://lib.byu.edu'>Harold B. Lee Library</a></h1>
+    	</div>
+    </header>
+    
+    {% include '_navigation.tmpl' %}
+
+    <div class='main'>
+    	<div class='container'>
+
+{% endautoescape %}
+{% endspaceless %}
