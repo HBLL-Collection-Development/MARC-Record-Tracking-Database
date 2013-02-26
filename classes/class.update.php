@@ -19,6 +19,19 @@ class update {
   public function records_table($form_data) {
     return $this->update_records($form_data);
   }
+  
+  public function next_load($resource_id) {
+    $next_load = date('Y-m-d', strtotime('+2 weekdays'));
+    $database = new db;
+    $db = $database->connect();
+    $sql = 'UPDATE records SET next_load = :next_load WHERE id = :resource_id';
+    $query = $db->prepare($sql);
+    $query->bindParam(':next_load', $next_load);
+    $query->bindParam(':resource_id', $resource_id);
+    $status = $query->execute();
+    $db = null;
+    return $status;
+  }
 
   private function update_records($form_data) {
     // Clean data

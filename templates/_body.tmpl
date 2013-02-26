@@ -13,7 +13,7 @@
         {% if result.username or result.password %}<br/>{{ result.username }}{% if result.password %} :: {{ result.password }}{% endif %}{% endif %}</td>
     <td>{{ result.frequency }}</td>
     <td><a href="{{ app_url }}/{{ upload_url }}/{{ result.id }}.xml">{{ result.last_load }}</a></td>
-    <td>{{ result.next_load }}<br/>
+    <td>{% if result.next_load %}{{ result.next_load }}{% else %}<a href="upload.php?resource_id={{ result.id }}">Load soon</a>{% endif %}<br/>
         <form enctype="multipart/form-data" action="upload.php" method="post" accept-charset="utf-8">
           <input type="hidden" name="resource_id" value="{{ result.id }}" />
           <input type="hidden" name="frequency" value="{{ result.frequency }}" />
