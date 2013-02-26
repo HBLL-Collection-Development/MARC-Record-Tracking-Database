@@ -1,3 +1,4 @@
+{% set app_url = constant('config::URL') %}
 {% spaceless %}
 {% autoescape false %}
 
@@ -14,6 +15,7 @@
   <!--[if lt IE 9]>
     <script src='//media.lib.byu.edu/assets/js/html5shiv/html5shiv-1.0.js'></script>
   <![endif]-->
+  <link rel='stylesheet' href='assets/styles/styles.css' type='text/css'/>
   <!-- Tablesorter data -->
 	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7/jquery.min.js"></script>
 	<script src='lib/js/tablesorter/js/jquery.tablesorter.min.js'></script>
@@ -24,60 +26,6 @@
     }
   );
   </script>
-
-  <style type="text/css">
-    body {
-      line-height: 1.4em;
-    }
-    h1 {
-      font-weight: bold;
-      font-size: 2em;
-      color: #830;
-      margin: 1em 0 0 0;
-    }
-    h2, h3 {
-      font-weight: bold;
-      font-size: 1.5em;
-      color: #999;
-      margin: 1em 0 0 0;
-    }
-    h3 {
-      font-size: 1em;
-    }
-    h4 {
-      font-weight:bold;
-      margin: 2em 0 0.5em 0;
-      color: #535353;
-    }
-    form {
-      line-height: .7em;
-    }
-    label {
-      margin: 1.25em 0 0 0;
-      padding: 1.25em 0 0 0;
-    }
-    form #url {
-      min-width: 40em;
-    }
-    form #notes {
-      max-width: 40em;
-    }
-    ul {
-      font-size: 0.75em;
-      font-weight: normal;
-      color: #999;
-      padding: 0.5em 0;
-    }
-    ul li {
-      padding-left: 0.25em;
-    }
-    .w7 {
-      min-width: 7em;
-    }
-    .w15 {
-      min-width: 15em;
-    }
-  </style>
 </head>
 <body>
     <header id='site_header' class='frame compact'>
