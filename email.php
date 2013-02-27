@@ -20,15 +20,13 @@ if($count > 0) {
     $vendor_name   = $resource['vendor_name'];
     $resource_list .= $next_load . ': ' . $vendor_name . '-' . $resource_name . "\r\n";
   }
-  echo $resource_list;
-  die();
-  ob_start();
   $to      = config::NOTIFY_EMAILS;
-  $subject = date('D, M d, Y') . ': MARC Records to Load';
+  $subject = 'MARC Records to Load for ' . date('D, M d, Y');
   $message = 'The following resources need to be loaded soon:' . "\r\n\r\n" . $resource_list;
   $headers = 'From: ' . config::FROM_EMAIL . "\r\n" .
       'Reply-To: ' . config::FROM_EMAIL . "\r\n" .
       'X-Mailer: PHP/' . phpversion();
+  ob_start();
   mail( $to, $subject, $message, $headers );
 } else {
   echo 'Congratulations! No resources need to be loaded in the next 2 weeks.';
