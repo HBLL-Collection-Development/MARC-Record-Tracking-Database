@@ -4,7 +4,7 @@
 {% autoescape false %}
 
 <table id="resources" class="tablesorter">
-<thead><tr><th></th><th class="w15">583 (Vendor-Resource Name)<br/>Username :: Password</th><th class="w7">Frequency</th><th class="w7">Last load</th><th>Next load</th><th class="w7"># Records</th><th>Notes</th></tr></thead>
+<thead><tr><th></th><th class="w15">583 (Vendor-Resource Name)<br/>Username :: Password</th><th class="w6">Frequency</th><th class="w6">Last load</th><th class="w6">Next load</th><th>Load records</th><th>Notes</th></tr></thead>
 <tbody>
 {% for result in results %}
   <tr>
@@ -12,17 +12,18 @@
     <td>{% if result.url %}<a href="{{ result.url|e('html') }}">{{ result.vendor_name }}-{{ result.resource_name}}</a>{% else %}{{ result.vendor_name }}-{{ result.resource_name}}{% endif %}
         {% if result.username or result.password %}<br/>{{ result.username }}{% if result.password %} :: {{ result.password }}{% endif %}{% endif %}</td>
     <td>{{ result.frequency }}</td>
-    <td><a href="{{ app_url }}/{{ upload_url }}/{{ result.id }}.xml">{{ result.last_load }}</a></td>
-    <td>{% if result.next_load %}{{ result.next_load }}{% else %}<a href="upload.php?resource_id={{ result.id }}">Load soon</a>{% endif %}<br/>
-        <form enctype="multipart/form-data" action="upload.php" method="post" accept-charset="utf-8">
-          <input type="hidden" name="resource_id" value="{{ result.id }}" />
-          <input type="hidden" name="frequency" value="{{ result.frequency }}" />
-          <input name="marc_records" type="file" />
-          <input type="submit" value="upload" />
-        </form>
+    <td>{% if result.file_exists == 'Y' %}<a href="{{ app_url }}/{{ upload_directory }}/{{ result.id }}.xml">{{ result.last_load }}</a>{% else %}{{ result.last_load }}{% endif %}</td>
+    <td>{% if result.next_load %}{{ result.next_load }}{% else %}<a href="upload.php?resource_id={{ result.id }}">Add load date</a>{% endif %}</td>
+    <td class="mw16">
+      <form enctype="multipart/form-data" action="upload.php" method="post" class="upload_form" accept-charset="utf-8">
+        <input type="hidden" name="resource_id" value="{{ result.id }}" />
+        <input type="hidden" name="frequency" value="{{ result.frequency }}" />
+        <input name="marc_records" type="file" /><br/>
+        <label for="num_records">Number of records: </label><input type="text" name="num_records" value="{{ result.num_records }}" id="num_records" placeholder="Numbers only">
+        <input type="submit" value="upload" />
+      </form>
     </td>
-    <td>{{ result.num_records|number_format }}</td>
-    <td>{{ result.notes }}</td>
+    <td class="mw16">{{ result.notes }}</td>
   </tr>
 
 {% endfor %}

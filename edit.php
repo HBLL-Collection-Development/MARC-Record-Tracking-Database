@@ -19,8 +19,8 @@ if(!$submit) {
   $username          = $resource[0]['username'];
   $password          = $resource[0]['password'];
   $frequency         = $resource[0]['frequency'];
-  $frequency_options = array('Weekly', 'Monthly', 'Quarterly', 'Semiannually', 'Annually', 'When notified');
-  $frequency_form    = '';
+  $frequency_options = json_decode(config::FREQUENCY);
+  $frequency_form    = NULL;
   foreach($frequency_options as $option) {
     if($option == $frequency) {
       $frequency_form .= '<option selected="selected">' . $option . '</option>';
@@ -49,7 +49,7 @@ if(!$submit) {
   <h1>$resource_name</h1>
   <h2>$vendor_name</h2>
   <h2>Last loaded <em>$last_load</em></h2>
-  <form action="#" method="get" accept-charset="utf-8">
+  <form action="" method="get" accept-charset="utf-8">
     <input type="hidden" name="resource_id" value="$resource_id" />
     <p>
       <label for="load_records">Load records:</label>

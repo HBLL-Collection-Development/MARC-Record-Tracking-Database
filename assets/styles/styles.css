@@ -43,8 +43,18 @@ ul {
 ul li {
   padding-left: 0.25em;
 }
-.w7 {
-  min-width: 7em;
+.upload_form label {
+	padding: .5em 0;
+	margin: 0;
+}
+.upload_form input#num_records {
+	max-width: 10em;
+}
+.w6 {
+  min-width: 6em;
+}
+.mw16 {
+	max-width: 16em;
 }
 .w15 {
   min-width: 15em;

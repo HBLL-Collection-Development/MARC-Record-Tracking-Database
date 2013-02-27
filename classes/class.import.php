@@ -15,12 +15,15 @@ class import {
     * @param array $file Array with all uploaded file information
     * @return boolean TRUE if upload successful; else logs errors
     */
-    public function upload( $resource_id, $frequency, $file ) {
+    public function upload( $resource_id, $frequency, $num_records, $file ) {
       $filename = $resource_id . '.xml';
       $tmp_name = $file['marc_records']['tmp_name'];
       if (move_uploaded_file($tmp_name, config::UPLOAD_DIRECTORY . '/' . $filename)) {
         $today = date('Y-m-d');
         switch ($frequency) {
+          case 'Once':
+            $next_load = null;
+            break;
           case 'Weekly':
             $next_load = date('Y-m-d', strtotime('+7 days', strtotime($today)));
             break;
@@ -45,14 +48,22 @@ class import {
         }
         $database = new db;
         $db = $database->connect();
-        $sql = 'UPDATE records SET last_load = :today, next_load = :next_load WHERE id = :resource_id';
+        $sql = 'UPDATE records SET last_load = :today, next_load = :next_load, num_records = :num_records, file_exists = "Y" WHERE id = :resource_id';
         $query = $db->prepare($sql);
         $query->bindParam(':today', $today);
         $query->bindParam(':next_load', $next_load);
+        $query->bindParam(':num_records', $num_records);
         $query->bindParam(':resource_id', $resource_id);
-        $query->execute();
+        $result = $query->execute();
         $db = null;
-        return TRUE;
+        // If database load is successful return true
+        if($result === TRUE) {
+          return TRUE;
+        // Else return false
+        } else {
+          return FALSE;
+        }
+      // If file cannot be created, return false
       } else {
         return FALSE;
       }
