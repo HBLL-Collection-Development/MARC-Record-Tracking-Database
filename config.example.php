@@ -3,7 +3,7 @@
   * Configuration class.
   *
   * @author Jared Howland <marc.records@jaredhowland.com>
-  * @version 2013-02-25
+  * @version 2013-02-27
   * @since 2013-02-22
   *
   */
@@ -18,9 +18,11 @@ class config {
   // App settings
   const DEVELOPMENT      = TRUE; // Changes the app behavior (error reporting, template caching, which database to use, etc.)
   const URL              = '';
-  const UPLOAD_DIRECTORY = '';
+  const UPLOAD_DIRECTORY = 'records';
   const TIME_ZONE        = ''; // Needed for date calculations in PHP
   const NOTIFY_EMAILS    = '';
+  const FROM_EMAIL       = '';
+  const FREQUENCY        = '["Once","Weekly","Monthly","Quarterly","Semiannually","Annually","When notified"]'; // JSON of allowed values for frequency records are loaded
 
 
 /****************************************************************************/
