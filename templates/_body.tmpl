@@ -3,6 +3,16 @@
 {% spaceless %}
 {% autoescape false %}
 
+<ul class="chartlist">
+  <li>
+    <a href="#">{{ stats.percent_complete}} up to date</a>
+    <span class="index" style="width:{{ stats.percent_complete}}">{{ stats.percent_complete}}</span>
+  </li>
+</ul><br/>
+
+<p style="clear:both;"><strong>Number of Resources</strong>: {{ stats.num_resources}}</p>
+<p><strong>Number of MARC Records</strong>: {{ stats.num_records }}</p>
+
 <table id="resources" class="tablesorter">
 <thead><tr><th></th><th class="w15">583 (Vendor-Resource Name)<br/>Username :: Password</th><th class="w6">Frequency</th><th class="w6">Last load</th><th class="w6">Next load</th><th>Load records</th><th>Notes</th></tr></thead>
 <tbody>
