@@ -22,7 +22,7 @@ foreach($marc_record_loads as $resource) {
 }
 $percent_complete = round(($num_up_to_date_resources / $num_resources) * 100) . '%';
 
-$stats = array('num_records' => $num_records, 'num_resources' => $num_resources, 'percent_complete' => $percent_complete);
+$stats = array('num_records' => $num_records, 'num_resources' => $num_resources, 'num_up_to_date_resources' => $num_up_to_date_resources, 'percent_complete' => $percent_complete);
 
 $html = array('title' => 'Home', 'stats' => $stats, 'results' => $marc_record_loads);
 template::display('html.tmpl', $html);
