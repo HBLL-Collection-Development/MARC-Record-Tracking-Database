@@ -5,6 +5,8 @@
   * @author  Jared Howland <marc.records@jaredhowland.com@gmail.com>
   * @version 2013-02-23
   */
+  
+require_once 'lib/Archive_Tar/Archive/Tar.php';
 
 class import {
     /**
@@ -18,7 +20,10 @@ class import {
     public function upload( $resource_id, $frequency, $num_records, $file ) {
       $filename = $resource_id . '.xml';
       $tmp_name = $file['marc_records']['tmp_name'];
-      if (move_uploaded_file($tmp_name, config::UPLOAD_DIRECTORY . '/' . $filename)) {
+      if(move_uploaded_file($tmp_name, config::UPLOAD_DIRECTORY . '/' . $filename)) {
+        $tar = new Archive_Tar(config::UPLOAD_DIRECTORY . '/' . $filename . '.tar.gz', 'gz');
+        $files = array($filename);
+        $compressed_tar = $tar->create($files) or die('Could not create archive. Please go back and try again.');
         $today = date('Y-m-d');
         switch ($frequency) {
           case 'Once':
