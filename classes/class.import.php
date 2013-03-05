@@ -3,10 +3,11 @@
   * Class to import files into app
   *
   * @author  Jared Howland <marc.records@jaredhowland.com@gmail.com>
-  * @version 2013-02-23
+  * @version 2013-03-05
+  * @since 2013-02-23
   */
   
-require_once 'lib/Archive_Tar/Archive/Tar.php';
+// require_once 'lib/Archive_Tar/Archive/Tar.php';
 
 class import {
     /**
@@ -21,9 +22,11 @@ class import {
       $filename = $resource_id . '.xml';
       $tmp_name = $file['marc_records']['tmp_name'];
       if(move_uploaded_file($tmp_name, config::UPLOAD_DIRECTORY . '/' . $filename)) {
-        $tar = new Archive_Tar(config::UPLOAD_DIRECTORY . '/' . $filename . '.tar.gz', 'gz');
-        $files = array($filename);
-        $compressed_tar = $tar->create($files) or die('Could not create archive. Please go back and try again.');
+        // Tar and gzip files as they are uploaded
+        // $tar = new Archive_Tar(config::UPLOAD_DIRECTORY . '/' . $filename . '.tar.gz', 'gz');
+        // $files = array(config::UPLOAD_DIRECTORY . '/' . $filename);
+        // $compressed_tar = $tar->create($files) or die('Could not create archive. Please go back and try again.');
+        // unlink(config::UPLOAD_DIRECTORY . '/' . $filename);
         $today = date('Y-m-d');
         switch ($frequency) {
           case 'Once':
