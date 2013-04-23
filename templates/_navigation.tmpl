@@ -7,6 +7,11 @@
   		{% else %}
   		  <li><a href="{{ app_url }}/">Active</a></li>
   		{% endif %}
+  		{% if title == 'Inactive' %}
+  			<li class="active"><a href="{{ app_url }}/inactive.php">Inactive</a></li>
+  		{% else %}
+  		  <li><a href="{{ app_url }}/inactive.php">Inactive</a></li>
+  		{% endif %}
   		{% if title == 'All' %}
   			<li class="active"><a href="{{ app_url }}/all.php">All</a></li>
   		{% else %}

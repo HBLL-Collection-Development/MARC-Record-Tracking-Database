@@ -83,8 +83,8 @@ HTML;
   $username      = trim($_REQUEST['username']);
   $password      = trim($_REQUEST['password']);
   $frequency     = trim($_REQUEST['frequency']);
-  if($form_data['next_load'] != '') {
-    $next_load   = trim(date('Y-m-d', strtotime($_REQUEST['next_load'])));
+  if($_REQUEST['next_load'] != '') {
+    $next_load   = date('Y-m-d', strtotime($_REQUEST['next_load']));
   } else {
     $next_load   = NULL;
   }

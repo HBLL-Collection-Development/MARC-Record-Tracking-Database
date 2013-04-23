@@ -3,15 +3,16 @@
 {% spaceless %}
 {% autoescape false %}
 
+{% if stats %}
 <ul class="chartlist">
   <li>
     <a href="#">{{ stats.percent_complete}} up to date</a>
     <span class="index" style="width:{{ stats.percent_complete}}">{{ stats.percent_complete}}</span>
   </li>
 </ul><br/>
-
 <p style="clear:both;">{{ stats.num_up_to_date_resources|number_format }} out of {{ stats.num_resources|number_format }} resources are up to date.</p>
 <p><strong>Number of MARC Records</strong>: {{ stats.num_records|number_format }} (<a href="download.php">download all records</a>)</p>
+{% endif %}
 
 <table id="resources" class="tablesorter">
 <thead><tr><th></th><th class="w15">583 (Vendor-Resource Name)<br/>Username :: Password</th><th class="w6">Frequency</th><th class="w6">Last load</th><th class="w6">Next load</th><th>Load records</th><th>Notes</th></tr></thead>
