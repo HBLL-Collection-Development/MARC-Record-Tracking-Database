@@ -9,6 +9,8 @@
   */
 require_once 'config.php';
 
+// TODO: Convert to OOP
+
 $format = $_REQUEST['format'];
 
 $database = new db;

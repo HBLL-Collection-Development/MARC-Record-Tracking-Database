@@ -1,6 +1,7 @@
 <?php
 require_once 'config.php';
 
+// TODO: Convert to OOP
 $resource_id = $_REQUEST['resource_id'];
 $frequency   = $_REQUEST['frequency'];
 $num_records = $_REQUEST['num_records'];

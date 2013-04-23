@@ -1,6 +1,7 @@
 <?php
 require_once 'config.php';
 
+// TODO: Convert to OOP
 $resource_id = $_REQUEST['id'];
 $submit = $_REQUEST['submit'];
 

@@ -20,7 +20,7 @@ class config {
   const URL              = '';
   const UPLOAD_DIRECTORY = 'records';
   const TIME_ZONE        = ''; // Needed for date calculations in PHP
-  const NOTIFY_EMAILS    = '';
+  const NOTIFY_EMAILS    = ''; // Who should receive the emails; comma-delimited if more than one recipient (http://php.net/manual/en/function.mail.php)
   const FROM_EMAIL       = '';
   const FREQUENCY        = '["Once","Weekly","Monthly","Quarterly","Semiannually","Annually","When notified"]'; // JSON of allowed values for frequency records are loaded
 

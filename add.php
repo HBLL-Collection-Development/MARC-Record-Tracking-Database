@@ -1,6 +1,7 @@
 <?php
 require_once 'config.php';
 
+// TODO: Convert to OOP
 $vendor_id = $_REQUEST['vendor_id'];
 
 if(is_null($vendor_id)) {
