@@ -9,6 +9,10 @@
   */
   
 require_once 'config.php';
+$date = date('r') . "\n";
+$fp = fopen('email_log', 'a');
+fwrite($fp, 'Date: ' . $date);
+fclose($fp);
 $email = new email;
 $email->send_email();
 ?>
