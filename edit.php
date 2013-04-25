@@ -40,10 +40,10 @@ if(!$submit) {
   $load_records  = $resource[0]['load_records'];
   if($load_records == 'Y') {
     $check_yes = ' checked="yes"';
-    $check_no = '';
+    $check_no  = '';
   } else {
     $check_yes = '';
-    $check_no = ' checked="yes"';
+    $check_no  = ' checked="yes"';
   }
   $vendor_name   = $resource[0]['vendor_name'];
   $html = <<<HTML
