@@ -6,36 +6,47 @@
 {% if stats %}
 <ul class="chartlist">
   <li>
-    <a href="#">{{ stats.percent_complete}} up to date</a>
+    <a href="#">{{ stats.percent_complete}} up to date<br/>{{ stats.num_up_to_date_resources|number_format }} of {{ stats.num_resources|number_format }} resources</a>
     <span class="index" style="width:{{ stats.percent_complete}}">{{ stats.percent_complete}}</span>
   </li>
-</ul><br/>
-<p style="clear:both;">{{ stats.num_up_to_date_resources|number_format }} out of {{ stats.num_resources|number_format }} resources are up to date.</p>
-<p><strong>Number of MARC Records</strong>: {{ stats.num_records|number_format }} (<a href="download.php">download all records</a>)</p>
+</ul>
+<p class="stats">{{ stats.num_records|number_format }} total records</p>
 {% endif %}
 
 <table id="resources" class="tablesorter">
-<thead><tr><th></th><th class="w15">583 (Vendor-Resource Name)<br/>Username :: Password</th><th class="w6">Frequency</th><th class="w6">Last load</th><th class="w6">Next load</th><th>Load records</th><th>Notes</th></tr></thead>
+<thead>
+  <tr><th class="w5"></th><th class="w14">Vendor-Resource Name<br/>Username :: Password</th><th class="w6">Frequency</th><th>Last load</th><th>Next load</th><th class="w14">Load records</th></tr>
+</thead>
 <tbody>
 {% for result in results %}
+{# Determine pluralization of num_records #}
+{% set num_records_display %}
+{% set num_records_format = result.num_records|number_format %}
+{% trans %}
+{{ num_records_format }} record
+{% plural result.num_records %}
+{{ num_records_format }} records
+{% endtrans %}
+{% endset %}
   <tr>
-    <td><a href="edit.php?id={{ result.id }}">Edit</a></td>
-    <td>{% if result.url %}<a href="{{ result.url|e('html') }}">{{ result.vendor_name }}-{{ result.resource_name}}</a>{% else %}{{ result.vendor_name }}-{{ result.resource_name}}{% endif %}
-        {% if result.username or result.password %}<br/>{{ result.username }}{% if result.password %} :: {{ result.password }}{% endif %}{% endif %}</td>
+    <td class="edit" rowspan="2"><a href="edit.php?id={{ result.id }}">Edit</a></td>
+    <td>
+      {% if result.url %}<a href="{{ result.url|e('html') }}" class="resource">{{ result.vendor_name }}-{{ result.resource_name}}</a>{% else %}<span class="resource">{{ result.vendor_name }}-{{ result.resource_name}}</span>{% endif %}
+      {% if result.username or result.password %}<br/>{{ result.username }}{% if result.password %} :: {{ result.password }}{% endif %}{% endif %}
+    </td>
     <td>{{ result.frequency }}</td>
-    <td>{% if result.file_exists == 'Y' %}<a href="{{ app_url }}/{{ upload_directory }}/{{ result.id }}.xml">{{ result.last_load }}</a>{% else %}{{ result.last_load }}{% endif %}</td>
+    <td>{% if result.file_exists == 'Y' %}<a href="{{ app_url }}/{{ upload_directory }}/{{ result.id }}.xml">{{ result.last_load }}</a><br/>{{ num_records_display }}{% else %}{{ result.last_load }}{% endif %}</td>
     <td>{% if result.next_load %}{{ result.next_load }}{% else %}<a href="upload.php?resource_id={{ result.id }}">Add load date</a>{% endif %}</td>
-    <td class="mw16">
+    <td>
       <form enctype="multipart/form-data" action="upload.php" method="post" class="upload_form" accept-charset="utf-8">
         <input type="hidden" name="resource_id" value="{{ result.id }}" />
         <input type="hidden" name="frequency" value="{{ result.frequency }}" />
-        <input name="marc_records" type="file" /><br/>
-        <label for="num_records">Number of records: </label><input type="text" name="num_records" value="{{ result.num_records }}" id="num_records" placeholder="Numbers only">
+        <input name="marc_records" type="file" />
         <input type="submit" value="upload" />
       </form>
     </td>
-    <td class="mw16">{{ result.notes }}</td>
-  </tr>
+  </tr> 
+  <tr class="tablesorter-childRow"><td colspan="5">{% if result.notes %}<em>NOTE</em>: {{ result.notes }}{% endif %}</td></tr>
 
 {% endfor %}
 

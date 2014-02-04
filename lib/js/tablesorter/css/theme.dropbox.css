@@ -22,7 +22,6 @@
 	border-color: #82cffa #e7f2fb #96c4ea;
 	border-style: solid;
 	border-width: 1px;
-	height: 29px;
 	padding: 3px 6px;
 	font-size: 13px;
 	font-weight: normal;
@@ -36,7 +35,6 @@
 	background-color: #f0f9ff;
 	border-bottom: 1px solid #96c4ea;
 	box-shadow: 0 1px 1px rgba(0, 0, 0, 0.12), 0 0 0 #000000 inset;
-	cursor: pointer;
 	white-space: normal;
 }
 .tablesorter-dropbox .tablesorter-headerSortUp,
@@ -45,11 +43,14 @@
 .tablesorter-dropbox .tablesorter-headerDesc {
 	font-weight: 600;
 }
+.tablesorter-dropbox .tablesorter-header {
+	cursor: pointer;
+}
 .tablesorter-dropbox .tablesorter-header i {
 	width: 9px;
 	height: 9px;
-	padding: 4px 20px 4px 4px;
-	cursor: pointer;
+	padding: 0 10px 0 4px;
+	display: inline-block;
 	background-position: center right;
 	background-repeat: no-repeat;
 	content: "";
@@ -74,6 +75,10 @@
 	background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAkAAAAJCAYAAADgkQYQAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAALNJREFUeNpi/P//PwMhwBJf3uP879e3PUzMzBiS//7+ZWBi43JhBJmU2z7nIzMzEx8jIyNcAUj8799/nyZXpvCzgARYuXjTWBkZVjCzIEz7++cvw+//DGkgNiPMTWVT1l5hZvynDTINbMp/pqtdOcE6IDkmmM5fv3/5//v37z9QBQOIBvFhcnBFEwoj7/5jZFnz9+8fBhAN4sN9h+ybH9++JrGxscr/+vE1CVmckZhwAggwANvlUyq5Dd1wAAAAAElFTkSuQmCC');
 	/* background-image: url(images/dropbox-desc-hovered.png); */
 }
+.tablesorter-dropbox thead .sorter-false {
+	cursor: default;
+}
+
 .tablesorter-dropbox thead .sorter-false i,
 .tablesorter-dropbox thead .sorter-false:hover i {
 	background-image: none;
@@ -133,9 +138,14 @@
 .tablesorter-dropbox tr.even td.tertiary {
 }
 
+/* caption */
+caption {
+	background: #fff;
+}
+
 /* Filter Widget */
-.tablesorter-dropbox.tablesorter-filter-row td {
-	background: #eee;
+.tablesorter-dropbox .tablesorter-filter-row td {
+	background: #fff;
 	line-height: normal;
 	text-align: center; /* center the input */
 	-webkit-transition: line-height 0.1s ease;
@@ -144,14 +154,14 @@
 	transition: line-height 0.1s ease;
 }
 /* optional disabled input styling */
-.tablesorter-dropbox.tablesorter-filter-row .disabled {
+.tablesorter-dropbox .tablesorter-filter-row .disabled {
 	opacity: 0.5;
 	filter: alpha(opacity=50);
 	cursor: not-allowed;
 }
 
 /* hidden filter row */
-.tablesorter-dropbox.tablesorter-filter-row.hideme td {
+.tablesorter-dropbox .tablesorter-filter-row.hideme td {
 	/*** *********************************************** ***/
 	/*** change this padding to modify the thickness     ***/
 	/*** of the closed filter row (height = padding x 2) ***/
@@ -161,7 +171,7 @@
 	line-height: 0;
 	cursor: pointer;
 }
-.tablesorter-dropbox.tablesorter-filter-row.hideme .tablesorter-filter {
+.tablesorter-dropbox .tablesorter-filter-row.hideme .tablesorter-filter {
 	height: 1px;
 	min-height: 0;
 	border: 0;
@@ -173,11 +183,11 @@
 }
 
 /* filters */
-.tablesorter-dropbox.tablesorter-filter {
+.tablesorter-dropbox .tablesorter-filter {
 	width: 98%;
-	height: inherit;
+	height: auto;
 	margin: 4px;
-	padding: 4px;
+
 	background-color: #fff;
 	border: 1px solid #bbb;
 	color: #333;
@@ -188,4 +198,10 @@
 	-moz-transition: height 0.1s ease;
 	-o-transition: height 0.1s ease;
 	transition: height 0.1s ease;
+}
+
+/* ajax error row */
+.tablesorter .tablesorter-errorRow td {
+	cursor: pointer;
+	background-color: #e6bf99;
 }

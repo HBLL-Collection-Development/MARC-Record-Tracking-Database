@@ -33,17 +33,17 @@ if(is_null($vendor_id)) {
       <select name="vendor_id" id="vendor_id">
         <option value="" selected="selected">Select a vendor&hellip;</option>
         $vendor_list
-      </select>
+      </select><br/>
       <label for="vendor_name">Or add a new vendor:</label><br/><input type="text" name="vendor_name" id="vendor_name">
     </p>
     <p><label for="resource_name">Resource name:</label><br/><input type="text" name="resource_name" id="resource_name"></p>
     <p style="line-height: 1.5em;">
-      <label for="primo_central">In Primo Central:</label>
+      <label for="primo_central">In Primo Central:</label><br/>
       <input type="radio" name="primo_central" id="Y-pc" value="Y"><label for="Y-pc">Yes</label><br/><br/>
       <input type="radio" name="primo_central" id="N-pc" value="N"><label for="N-pc">No</label>
     </p>
     <p style="line-height: 1.5em;">
-      <label for="load_records">Load records:</label>
+      <label for="load_records">Load records:</label><br/>
       <input type="radio" name="load_records" id="Y" value="Y"><label for="Y">Yes</label><br/><br/>
       <input type="radio" name="load_records" id="N" value="N"><label for="N">No</label>
     </p>

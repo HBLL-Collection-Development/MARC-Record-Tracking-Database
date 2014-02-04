@@ -12,16 +12,17 @@
   		{% else %}
   		  <li><a href="{{ app_url }}/inactive.php">Inactive</a></li>
   		{% endif %}
-  		{% if title == 'All' %}
-  			<li class="active"><a href="{{ app_url }}/all.php">All</a></li>
-  		{% else %}
-  		  <li><a href="{{ app_url }}/all.php">All</a></li>
-  		{% endif %}
+  		<!-- {% if title == 'All' %}
+        <li class="active"><a href="{{ app_url }}/all.php">All</a></li>
+      {% else %}
+        <li><a href="{{ app_url }}/all.php">All</a></li>
+      {% endif %} -->
 			{% if title == 'Add a Resource' %}
         <li class="active"><a href="{{ app_url }}/add.php">Add a Resource</a></li>
       {% else %}
         <li><a href="{{ app_url }}/add.php">Add a Resource</a></li>
       {% endif %}
+      <li><a href="{{ app_url }}/download.php">Download All Records</a></li>
 		</ul>
 	</div>
 </nav>

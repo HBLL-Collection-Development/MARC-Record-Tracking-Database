@@ -38,6 +38,10 @@
 	margin-top: -8px; /* half the icon height; older IE doesn't like this */
 }
 
+.tablesorter-jui thead .sorter-false {
+	cursor: default;
+}
+
 /* tfoot */
 .tablesorter-jui tfoot th,
 .tablesorter-jui tfoot td {
@@ -76,6 +80,11 @@
 .tablesorter-jui .tablesorter-processing {
 	background-color: #ddd; /* older browsers that don't support rgba */
 	background-color: rgba(255,255,255,0.8);
+}
+
+/* caption */
+.tablesorter-jui caption {
+	border: 0;
 }
 
 /* filter widget */
@@ -118,7 +127,7 @@
 /* filters */
 .tablesorter-jui .tablesorter-filter {
 	width: 98%;
-	height: inherit;
+	height: auto;
 	margin: 0;
 	padding: 4px;
 	background-color: #fff;
@@ -131,4 +140,10 @@
 	-moz-transition: height 0.1s ease;
 	-o-transition: height 0.1s ease;
 	transition: height 0.1s ease;
+}
+
+/* ajax error row */
+.tablesorter .tablesorter-errorRow td {
+	cursor: pointer;
+	background-color: #e6bf99;
 }

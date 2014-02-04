@@ -2,3 +2,4 @@
 config.php
 records/
 download_all/*
+.DS_Store

@@ -40,10 +40,10 @@ if(!$submit) {
   $load_records  = $resource[0]['load_records'];
   if($load_records == 'Y') {
     $check_yes = ' checked="yes"';
-    $check_no  = '';
+    $check_no = '';
   } else {
     $check_yes = '';
-    $check_no  = ' checked="yes"';
+    $check_no = ' checked="yes"';
   }
   $vendor_name   = $resource[0]['vendor_name'];
   $html = <<<HTML
@@ -53,7 +53,7 @@ if(!$submit) {
   <form action="" method="get" accept-charset="utf-8">
     <input type="hidden" name="resource_id" value="$resource_id" />
     <p>
-      <label for="load_records">Load records:</label>
+      <label for="load_records">Load records:</label><br/>
       <input type="radio" name="load_records" id="Y" value="Y"$check_yes><label for="Y">Yes</label><br/><br/>
       <input type="radio" name="load_records" id="N" value="N"$check_no><label for="N">No</label>
     </p>
@@ -72,7 +72,7 @@ if(!$submit) {
     <p><input type="submit" name="submit" id="submit" value="submit"></p>
   </form>
 HTML;
-} else {  
+} else {
   $update = new update;
   $update_database = $update->records_table($_REQUEST);
   if($update_database === TRUE) {

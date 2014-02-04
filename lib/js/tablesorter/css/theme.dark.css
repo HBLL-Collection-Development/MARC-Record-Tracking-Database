@@ -45,6 +45,7 @@
 }
 .tablesorter-dark thead .sorter-false {
 	background-image: none;
+	cursor: default;
 	padding: 4px;
 }
 
@@ -112,6 +113,11 @@
 	background-color: #0f0f0f;
 }
 
+/* caption */
+caption {
+	background: #202020;
+}
+
 /* filter widget */
 .tablesorter-dark .tablesorter-filter-row td {
 	background: #202020;
@@ -154,7 +160,7 @@
 /* filters */
 .tablesorter-dark .tablesorter-filter {
 	width: 98%;
-	height: inherit;
+	height: auto;
 	margin: 4px;
 	padding: 4px;
 	background-color: #111;
@@ -167,4 +173,10 @@
 	-moz-transition: height 0.1s ease;
 	-o-transition: height 0.1s ease;
 	transition: height 0.1s ease;
+}
+
+/* ajax error row */
+.tablesorter .tablesorter-errorRow td {
+	cursor: pointer;
+	background-color: #e6bf99;
 }
