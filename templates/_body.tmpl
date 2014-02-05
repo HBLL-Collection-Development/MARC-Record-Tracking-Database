@@ -35,7 +35,7 @@
       {% if result.username or result.password %}<br/>{{ result.username }}{% if result.password %} :: {{ result.password }}{% endif %}{% endif %}
     </td>
     <td>{{ result.frequency }}</td>
-    <td>{% if result.file_exists == 'Y' %}<a href="{{ app_url }}/{{ upload_directory }}/{{ result.id }}.xml">{{ result.last_load }}</a><br/>{{ num_records_display }}{% else %}{{ result.last_load }}{% endif %}</td>
+    <td>{% if result.file_exists == 'Y' %}<a href="{{ app_url }}/{{ upload_directory }}/{{ result.id }}.xml"><span>{{ result.last_load }}</span></a><br/>{{ num_records_display }}{% else %}<span>{{ result.last_load }}</span>{% endif %}</td>
     <td>{% if result.next_load %}{{ result.next_load }}{% else %}<a href="upload.php?resource_id={{ result.id }}">Add load date</a>{% endif %}</td>
     <td>
       <form enctype="multipart/form-data" action="upload.php" method="post" class="upload_form" accept-charset="utf-8">
