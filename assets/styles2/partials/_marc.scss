@@ -3,6 +3,7 @@ body {
   font-family: $font_family;
 	font-size: $font_size;
 	font-weight: $font_weight;
+	line-height: $line_height;
 	color: $text_color;
 	background-color: $background_color;
   @include hyphens;
@@ -85,8 +86,8 @@ table{
 	  overflow: hidden;
 	}
 	
-	.w5 {
-	  width: 5em;
+	.w4-5 {
+	  width: 4.5em;
 	}
 	
 	.w6 {
@@ -264,4 +265,8 @@ ul {
 .stats {
 	margin-top: 2.5em;
 	padding-left: 17em;
+}
+
+.hidden {
+	display: none;
 }

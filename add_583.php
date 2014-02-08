@@ -3,10 +3,13 @@ require_once 'config.php';
 require_once 'lib/xmlreader-iterators.php'; // https://gist.github.com/hakre/5147685
 
 ini_set("memory_limit","12000M");
-ini_set('max_execution_time', 300);
+ini_set('max_execution_time', 500);
 
-$min = 36;
-$max = 36;
+// 36
+// 41
+
+$min = 41;
+$max = 41;
 
 $i = $min;
 

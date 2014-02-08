@@ -15,7 +15,7 @@
 
 <table id="resources" class="tablesorter">
 <thead>
-  <tr><th class="w5"></th><th class="w14">Vendor-Resource Name<br/>Username :: Password</th><th class="w6">Frequency</th><th>Last load</th><th>Next load</th><th class="w14">Load records</th></tr>
+  <tr><th class="w4-5"></th><th class="w14">Vendor-Resource Name<br/>Username :: Password</th><th class="w6">Frequency</th><th>Last load</th><th>Next load</th><th class="w14">Load records</th></tr>
 </thead>
 <tbody>
 {% for result in results %}
@@ -29,7 +29,7 @@
 {% endtrans %}
 {% endset %}
   <tr>
-    <td class="edit" rowspan="2"><a href="edit.php?id={{ result.id }}">Edit</a></td>
+    <td class="edit" rowspan="2"><a href="edit.php?id={{ result.id }}">Edit</a><span class="hidden">{{ result.id }}</span></td>
     <td>
       {% if result.url %}<a href="{{ result.url|e('html') }}" class="resource">{{ result.vendor_name }}-{{ result.resource_name}}</a>{% else %}<span class="resource">{{ result.vendor_name }}-{{ result.resource_name}}</span>{% endif %}
       {% if result.username or result.password %}<br/>{{ result.username }}{% if result.password %} :: {{ result.password }}{% endif %}{% endif %}
