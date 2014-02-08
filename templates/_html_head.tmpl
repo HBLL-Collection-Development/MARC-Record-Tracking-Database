@@ -19,8 +19,7 @@
 	<link rel="stylesheet" href="lib/js/tablesorter/css/theme.blue.css">
   <script type="text/javascript" charset="utf-8">
     $(document).ready(function() {
-      // $("table").tablesorter( {headers: {0:{sorter:false}, 5:{sorter:false}}, theme : 'blue', textExtraction: {3: function (node) {return $(node).find('span').text();}}, widgets : [ 'zebra', 'stickyHeaders' ], sortList: [[4,0]]} );
-      $("table").tablesorter( {headers: {5:{sorter:false}}, theme : 'blue', textExtraction: {sort_span_text: function (node) {return $(node).find('span').text();}}, widgets : [ 'zebra', 'stickyHeaders' ], sortList: [[4,0]]} );
+      $("table").tablesorter( {headers: {5:{sorter:false}}, theme : 'blue', textExtraction: {0: function (node) {return $(node).find('span').text();}, 3: function (node) {return $(node).find('span').text();}}, widgets : [ 'zebra', 'stickyHeaders' ], sortList: [[4,0]]} );
     }
   );
   </script>
