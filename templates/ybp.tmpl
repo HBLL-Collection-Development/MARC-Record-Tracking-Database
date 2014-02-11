@@ -1,9 +1,9 @@
 {% spaceless %}
 {% autoescape false %}
 
-{% include '_html_head.tmpl' %}
-{{ html }}
-{% include '_html_foot.tmpl' %}
+{% for isbn in isbns %}
+{{ isbn }}|811699|
+{% endfor %}
 
 {% endautoescape %}
 {% endspaceless %}
