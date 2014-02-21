@@ -21,7 +21,8 @@ if(!$_REQUEST['start_id']) {
       <p><input type="submit" value="Continue &rarr;"></p>
     </form>
 HTML;
-  echo $html;
+  $html = array('title' => 'Manual Update', 'html' => $html);
+  template::display('generic.tmpl', $html, 'Manual Update');
   die();
 // The start_id is the min value used in the loop that follows
 } else {
