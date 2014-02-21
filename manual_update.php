@@ -8,11 +8,24 @@ ini_set('max_execution_time', 500);
 
 // If the start_id variable is not set, request that the user set it
 if(!$_REQUEST['start_id']) {
-  echo 'Please set the \'start_id\' and the \'end_id\' (optional) values to continue.';
+  $html = <<<HTML
+    <h1>Single Resource</h1>
+    <form action="" method="get">
+      <label for="start_id">ID of resource to update: </label><input type="text" name="start_id" id="start_id">
+      <p><input type="submit" value="Continue &rarr;"></p>
+    </form>
+    <h1>Range of Resources</h1>
+    <form action="" method="get">
+      <label for="start_id">ID of first resource to update: </label><input type="text" name="start_id" id="start_id"><br/>
+      <label for="end_id">ID of last resource to update: </label><input type="text" name="end_id" id="end_id">
+      <p><input type="submit" value="Continue &rarr;"></p>
+    </form>
+HTML;
+  echo $html;
   die();
 // The start_id is the min value used in the loop that follows
 } else {
-  $min = $_REQUEST['start_id'];
+  $min = (int) $_REQUEST['start_id'];
 }
 
 // If there is no end_id variable, set the max to be the min so that only one resource is processed
@@ -20,7 +33,7 @@ if(!$_REQUEST['end_id']) {
   $max = $min;
   // Otherwise, begin running through all files beginning with start_id and ending with end_id
 } else {
-  $max = $_REQUEST['end_id'];
+  $max = (int) $_REQUEST['end_id'];
 }
 
 $i = $min;
