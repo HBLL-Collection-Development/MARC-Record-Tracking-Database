@@ -3,7 +3,7 @@
   * Class to adjust the XML file
   *
   * @author Jared Howland <marc.records@jaredhowland.com>
-  * @version 2014-02-02
+  * @version 2014-02-25
   * @since 2013-10-08
   *
   */
@@ -69,7 +69,7 @@ class adjust_xml {
         function($match) use ($resource_id){
             static $id = 0;
             $id++;
-            return '<marc:record><marc:leader>' . $match[1] . '</marc:leader>' . "\n" . '<marc:controlfield tag="001">' . $resource_id . ':' . $id . '</marc:controlfield>';
+            return '<marc:record><marc:leader>' . $match[1] . '</marc:leader>' . "\n" . '<marc:controlfield tag="001">' . $resource_id . '.' . $id . '</marc:controlfield>';
         },
         $xml_str);
   }
