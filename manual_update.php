@@ -43,7 +43,7 @@ while($i <= $max) {
   echo $i . '<br/>';
   $adjust_xml = new adjust_xml();
   $add_vendor = $adjust_xml->add_vendor($i);
-  $update_database = update_database($i);
+  // $update_database = update_database($i);
   $i++;
 }
 
