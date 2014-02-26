@@ -8,7 +8,7 @@ $submit = $_REQUEST['submit'];
 if(!$submit) {
   $database = new db;
   $db = $database->connect();
-  $sql = 'SELECT r.resource_name, r.url, r.username, r.password, r.frequency, r.last_load, r.next_load, r.num_records, r.notes, r.load_records, v.name AS vendor_name FROM records r INNER JOIN vendors v ON r.vendor_id = v.id WHERE r.id = :resource_id';
+  $sql = 'SELECT r.resource_name, r.url, r.username, r.password, r.frequency, r.last_load, r.next_load, r.num_records, r.notes, r.load_records, r.item_type, v.name AS vendor_name FROM records r INNER JOIN vendors v ON r.vendor_id = v.id WHERE r.id = :resource_id';
   $query = $db->prepare($sql);
   $query->bindParam(':resource_id', $resource_id);
   $query->execute();
@@ -29,15 +29,30 @@ if(!$submit) {
       $frequency_form .= '<option>' . $option . '</option>';
     }
   }
-  if($last_load != '') {
-    $last_load   = date('F j, Y', strtotime($resource[0]['last_load']));
+  if($last_load     != '') {
+    $last_load       = date('F j, Y', strtotime($resource[0]['last_load']));
+  } else {          
+    $last_load       = '[unknown]';
+  }                 
+  $next_load         = $resource[0]['next_load'];
+  $num_records       = number_format($resource[0]['num_records']);
+  $notes             = $resource[0]['notes'];
+  $load_records      = $resource[0]['load_records'];
+  $item_type         = $resource[0]['item_type'];
+  if(is_null($item_type)) {
+    $item_type_form  = '<option value="" disabled selected>Please choose an item type:</option>';
   } else {
-    $last_load   = '[unknown]';
+    $item_type_form  = NULL;
   }
-  $next_load     = $resource[0]['next_load'];
-  $num_records   = number_format($resource[0]['num_records']);
-  $notes         = $resource[0]['notes'];
-  $load_records  = $resource[0]['load_records'];
+  $item_type_options = json_decode(config::ITEM_TYPES);
+  
+  foreach($item_type_options as $option) {
+    if($option == $item_type) {
+      $item_type_form .= '<option selected="selected">' . $option . '</option>';
+    } else {
+      $item_type_form .= '<option>' . $option . '</option>';
+    }
+  }
   if($load_records == 'Y') {
     $check_yes = ' checked="yes"';
     $check_no = '';
@@ -64,6 +79,12 @@ if(!$submit) {
       <label for="frequency">Frequency:</label><br/>
       <select name="frequency" id="frequency">
         $frequency_form
+      </select>
+    </p>
+    <p>
+      <label for="item_type">Item Type:</label><br/>
+      <select name="item_type" id="item_type">
+        $item_type_form
       </select>
     </p>
     <p><label for="num_records"># Records (numbers only):</label><br/><input type="text" name="num_records" value="$num_records" id="num_records"></p>

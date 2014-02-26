@@ -39,6 +39,8 @@ class update {
     $username      = trim($form_data['username']);
     $password      = trim($form_data['password']);
     $frequency     = trim($form_data['frequency']);
+    $item_type     = trim($form_data['item_type']);
+    if($item_type == '') { $item_type = null; }
     if($form_data['next_load'] != '') {
       $next_load   = trim(date('Y-m-d', strtotime($form_data['next_load'])));
     } else {
@@ -51,12 +53,13 @@ class update {
     // Update database
     $database = new db;
     $db = $database->connect();
-    $sql = 'UPDATE records SET url = :url, username = :username, password = :password, frequency = :frequency, next_load = :next_load, num_records = :num_records, load_records = :load_records, notes = :notes WHERE id = :resource_id';
+    $sql = 'UPDATE records SET url = :url, username = :username, password = :password, frequency = :frequency, next_load = :next_load, num_records = :num_records, load_records = :load_records, item_type = :item_type, notes = :notes WHERE id = :resource_id';
     $query = $db->prepare($sql);
     $query->bindParam(':url', $url);
     $query->bindParam(':username', $username);
     $query->bindParam(':password', $password);
     $query->bindParam(':frequency', $frequency);
+    $query->bindParam(':item_type', $item_type);
     $query->bindParam(':next_load', $next_load);
     $query->bindParam(':num_records', $num_records);
     $query->bindParam(':load_records', $load_records);
