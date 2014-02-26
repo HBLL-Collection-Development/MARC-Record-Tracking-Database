@@ -36,13 +36,16 @@ if(!$submit) {
   }                 
   $next_load         = $resource[0]['next_load'];
   $num_records       = number_format($resource[0]['num_records']);
+  if(is_null($num_records) || $num_records == 0) {
+    $num_records = '';
+  }
   $notes             = $resource[0]['notes'];
   $load_records      = $resource[0]['load_records'];
   $item_type         = $resource[0]['item_type'];
   if(is_null($item_type)) {
-    $item_type_form  = '<option value="" disabled selected>Please choose an item type:</option>';
+    $item_type_form  = '<option value="" disabled selected>Please choose an item type:</option><option value="">MIXED</option>';
   } else {
-    $item_type_form  = NULL;
+    $item_type_form  = '<option value="" disabled>Please choose an item type:</option><option value="">MIXED</option>';
   }
   $item_type_options = json_decode(config::ITEM_TYPES);
   
