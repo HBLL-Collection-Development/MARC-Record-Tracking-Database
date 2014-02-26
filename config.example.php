@@ -23,6 +23,7 @@ class config {
   const NOTIFY_EMAILS    = ''; // Who should receive the emails; comma-delimited if more than one recipient (http://php.net/manual/en/function.mail.php)
   const FROM_EMAIL       = '';
   const FREQUENCY        = '["Once","Weekly","Monthly","Quarterly","Semiannually","Annually","When notified"]'; // JSON of allowed values for frequency records are loaded
+  const ITEM_TYPES       = '["archival_material","article","audio","audiobook","bluray","book","book_chapter","calculator","cassette","cd","cd-rom","conference_proceeding","cuneiform","curriculum","database","dissertation","dvd","ebook","ebookreader","ejournal","equipment","faculty_use","filmstrip","finding_aid","government_document","image","index","ipad","journal","laptop","laserdisc","legal_document","magazine","map","microfiche","microformat","newspaper_article","ostrakon","other","palmleaf","pamphlet","periodical","photograph","pitcture","poster","rare_book","record","reeltape","reference_entry","research_datasets","review","score","statistical_data_set","scroll","serial","slide","software","statistical_data_set","streamingaudio","streamingvideo","streamingmedia","text_resource","vhs","video","walkman","website"]'; // Acceptable item types to be parsed by Primo
 
 
 /****************************************************************************/
