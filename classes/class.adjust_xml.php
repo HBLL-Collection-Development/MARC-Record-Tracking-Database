@@ -22,8 +22,14 @@ class adjust_xml {
       $collection_name = $field_583[0]['resource_name'];
       $full_583 = $vendor_name . '-' . $collection_name;
       $full_583 = $this->create_583($full_583);
+      $item_type       = $field_583[0]['item_type'];
+      if(is_null($item_type)) {
+        $item_type = null;
+      } else {
+        $item_type = '<marc:item_type>' . $item_type . '</marc:item_type>';
+      }
       $search  = '</marc:record>';
-      $replace = $full_583 . '<marc:vendor_name>' . $vendor_name . '</marc:vendor_name><marc:collection_name>' . $collection_name . '</marc:collection_name></marc:record>';
+      $replace = $full_583 . '<marc:vendor_name>' . $vendor_name . '</marc:vendor_name><marc:collection_name>' . $collection_name . '</marc:collection_name>' . $item_type . '</marc:record>';
       $xml_str = str_replace($search, $replace, $xml_str, $count);
       $num_records = $this->count_records($resource_id, $count);
       file_put_contents($file, $xml_str);
@@ -36,7 +42,7 @@ class adjust_xml {
   private function get_583($resource_id) {
     $database = new db;
     $db = $database->connect();
-    $sql = 'SELECT r.resource_name, v.name AS vendor_name FROM records r INNER JOIN vendors v ON r.vendor_id = v.id WHERE r.id = :resource_id';
+    $sql = 'SELECT r.resource_name, v.name AS vendor_name, r.item_type FROM records r INNER JOIN vendors v ON r.vendor_id = v.id WHERE r.id = :resource_id';
     $query = $db->prepare($sql);
     $query->bindParam(':resource_id', $resource_id);
     $query->execute();
