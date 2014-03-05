@@ -3,7 +3,7 @@
   * Class to adjust the XML file
   *
   * @author Jared Howland <marc.records@jaredhowland.com>
-  * @version 2014-02-25
+  * @version 2014-03-05
   * @since 2013-10-08
   *
   */
@@ -33,7 +33,7 @@ class adjust_xml {
       $xml_str = str_replace($search, $replace, $xml_str, $count);
       $num_records = $this->count_records($resource_id, $count);
       file_put_contents($file, $xml_str);
-      echo $file . ' now includes vendor and collection name.<br/>';
+      echo $file . ' now includes vendor and collection name. (' . $num_records . ' records)<br/>';
     } else {
       echo $file . ' does not exist.<br/>';
     }
