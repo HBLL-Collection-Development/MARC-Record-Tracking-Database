@@ -3,7 +3,7 @@
   * Class to adjust the XML file
   *
   * @author Jared Howland <marc.records@jaredhowland.com>
-  * @version 2014-03-05
+  * @version 2014-03-25
   * @since 2013-10-08
   *
   */
@@ -12,28 +12,28 @@ class adjust_xml {
   public function add_vendor($resource_id) {
     $file = config::UPLOAD_DIRECTORY . '/' . $resource_id . '.xml';
     if(file_exists($file)) {
-      $xml_str = file_get_contents($file);
-      $xml_str = $this->remove_001($xml_str);
-      $xml_str = $this->remove_583($xml_str);
-      $xml_str = $this->remove_resource_collection_name($xml_str);
-      $xml_str = $this->add_001($xml_str, $resource_id);
+      $xml_str         = file_get_contents($file);
+      $xml_str         = $this->remove_001($xml_str);
+      $xml_str         = $this->remove_583($xml_str);
+      $xml_str         = $this->remove_resource_collection_name($xml_str);
+      $xml_str         = $this->add_001($xml_str, $resource_id);
       $field_583       = $this->get_583($resource_id);
       $vendor_name     = $field_583[0]['vendor_name'];
       $collection_name = $field_583[0]['resource_name'];
-      $full_583 = $vendor_name . '-' . $collection_name;
-      $full_583 = $this->create_583($full_583);
+      $full_583        = $vendor_name . '-' . $collection_name;
+      $full_583        = $this->create_583($full_583);
       $item_type       = $field_583[0]['item_type'];
       if(is_null($item_type)) {
         $item_type = null;
       } else {
         $item_type = '<marc:item_type>' . $item_type . '</marc:item_type>';
       }
-      $search  = '</marc:record>';
-      $replace = $full_583 . '<marc:vendor_name>' . $vendor_name . '</marc:vendor_name><marc:collection_name>' . $collection_name . '</marc:collection_name>' . $item_type . '</marc:record>';
-      $xml_str = str_replace($search, $replace, $xml_str, $count);
+      $search      = '</marc:record>';
+      $replace     = $full_583 . '<marc:vendor_name>' . $vendor_name . '</marc:vendor_name><marc:collection_name>' . $collection_name . '</marc:collection_name>' . $item_type . '</marc:record>';
+      $xml_str     = str_replace($search, $replace, $xml_str, $count);
       $num_records = $this->count_records($resource_id, $count);
       file_put_contents($file, $xml_str);
-      echo $file . ' now includes vendor and collection name. (' . $num_records . ' records)<br/>';
+      echo $file . ' now includes vendor and collection name. (' . $count . ' records)<br/>';
     } else {
       echo $file . ' does not exist.<br/>';
     }
@@ -52,7 +52,7 @@ class adjust_xml {
   }
   
   private function remove_001($xml_str) {
-    return preg_replace('/<marc:controlfield tag="001">.*?<\/marc:controlfield>\n/s', '', $xml_str);
+    return preg_replace('/<marc:controlfield tag="001">.*?<\/marc:controlfield>.*?/s', '', $xml_str);
   }
   
   private function remove_583($xml_str) {
@@ -71,11 +71,11 @@ class adjust_xml {
   
   private function add_001($xml_str, $resource_id) {
     return preg_replace_callback(
-        '/<marc:record><marc:leader>(.*?)<\/marc:leader>/s',
+        '/<marc:leader>(.*?)<\/marc:leader>/s',
         function($match) use ($resource_id){
             static $id = 0;
             $id++;
-            return '<marc:record><marc:leader>' . $match[1] . '</marc:leader>' . "\n" . '<marc:controlfield tag="001">' . $resource_id . '.' . $id . '</marc:controlfield>';
+            return '<marc:leader>' . $match[1] . '</marc:leader>' . "\n" . '<marc:controlfield tag="001">' . $resource_id . '.' . $id . '</marc:controlfield>';
         },
         $xml_str);
   }
