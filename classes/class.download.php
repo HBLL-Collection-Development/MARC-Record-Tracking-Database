@@ -3,7 +3,7 @@
   * Class to download all MARC record files
   *
   * @author  Jared Howland <marc.records@jaredhowland.com@gmail.com>
-  * @version 2013-04-23
+  * @version 2014-03-27
   * @since 2013-04-23
   */
   
@@ -17,11 +17,15 @@ class download {
     * @param null
     * @return boolean TRUE if files compressed successfully
     */
-    public function download_file() {
+    public function download_file($download = true) {
       set_time_limit(300);
       $marc_files       = $this->get_all();
       $compressed_files = $this->compress($marc_files);
-      $this->download_all();
+      if($download) {
+        $this->download_all();
+      } else {
+        rename(config::UPLOAD_DIRECTORY . '/All.tar.gz', 'download_all/All.tar.gz');
+      }
     }
     
     /**
