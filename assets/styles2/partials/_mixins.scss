@@ -8,9 +8,9 @@
 }
 
 @mixin page-size($width) {
-	max-width: $width;
-	margin: 0 auto;
-	padding: 2%;
+  max-width: $width;
+  margin: 0 auto;
+  padding: 2%;
 }
 
 @mixin border-radius($radius) {

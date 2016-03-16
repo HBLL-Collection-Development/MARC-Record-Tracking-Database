@@ -101,7 +101,7 @@ class display {
         $num_records += $resource['num_records'];
         // To count as being up to date, must have a file associated with it, and have the next load date in the future
         if($resource['file_exists'] == 'Y' && (strtotime($resource['next_load']) > strtotime(date('Y-m-d')) || is_null($resource['next_load']))) {
-      	$num_up_to_date_resources++;
+        $num_up_to_date_resources++;
         }
       }
       $percent_complete = round(($num_up_to_date_resources / $num_resources) * 100) . '%';

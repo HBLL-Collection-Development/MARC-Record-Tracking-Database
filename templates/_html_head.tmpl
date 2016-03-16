@@ -5,18 +5,18 @@
 <!doctype html>
 <html lang="en">
 <head>
-	<meta http-equiv="Content-type" content="text/html; charset=utf-8"/>
+  <meta http-equiv="Content-type" content="text/html; charset=utf-8"/>
 
-	<title>{{ title }}</title>
+  <title>{{ title }}</title>
 
   <link rel='stylesheet' href='assets/styles2/styles.css' type='text/css'/>
   <script type="text/javascript" src="//use.typekit.net/cqm0tii.js"></script>
   <script type="text/javascript">try{Typekit.load();}catch(e){}</script>
   <!-- Tablesorter data -->
   <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
-	<script src='lib/js/tablesorter/js/jquery.tablesorter.min.js'></script>
+  <script src='lib/js/tablesorter/js/jquery.tablesorter.min.js'></script>
   <script src="lib/js/tablesorter/js/jquery.tablesorter.widgets.min.js"></script>
-	<link rel="stylesheet" href="lib/js/tablesorter/css/theme.blue.css">
+  <link rel="stylesheet" href="lib/js/tablesorter/css/theme.blue.css">
   <script type="text/javascript" charset="utf-8">
     $(document).ready(function() {
       $("table").tablesorter( {headers: {5:{sorter:false}}, theme : 'blue', textExtraction: {0: function (node) {return $(node).find('span').text();}, 3: function (node) {return $(node).find('span').text();}}, widgets : [ 'zebra', 'stickyHeaders' ], sortList: [[4,0]]} );
@@ -28,9 +28,9 @@
     <header>
       <h1>MARC Record Loads</h1>
     </header>
-    
+
     {% include '_navigation.tmpl' %}
-    
+
     <section>
 
 {% endautoescape %}

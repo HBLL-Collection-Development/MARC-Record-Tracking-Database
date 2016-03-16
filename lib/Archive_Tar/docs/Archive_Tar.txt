@@ -146,7 +146,7 @@ Arguments :
                memorized path of each element in the list. 
   $p_remove_dir : A string which contains a path to be removed from
                   the memorized path of each element in the list, when
-		  relevant.
+      relevant.
 Return value :
   true on success, false on error.
 Sample 1 :
@@ -218,7 +218,7 @@ Arguments :
                memorized path of each element in the list. 
   $p_remove_dir : A string which contains a path to be removed from
                   the memorized path of each element in the list, when
-		  relevant.
+      relevant.
 Return value :
   true on success, false on error.
 Sample 1 :

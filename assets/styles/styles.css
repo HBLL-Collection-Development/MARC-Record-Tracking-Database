@@ -44,17 +44,17 @@ ul li {
   padding-left: 0.25em;
 }
 .upload_form label {
-	padding: .5em 0;
-	margin: 0;
+  padding: .5em 0;
+  margin: 0;
 }
 .upload_form input#num_records {
-	max-width: 10em;
+  max-width: 10em;
 }
 .w6 {
   min-width: 6em;
 }
 .mw16 {
-	max-width: 16em;
+  max-width: 16em;
 }
 .w15 {
   min-width: 15em;
